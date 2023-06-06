@@ -87,11 +87,11 @@ public class FirstTest{
         String windowHandle = driver.getWindowHandle();
         System.out.println("windowhandle = " + windowHandle);
         page.listOfPages.get(0).click();
-       for (String allHandles :  driver.getWindowHandles())
+        for (String allHandles :  driver.getWindowHandles())
             driver.switchTo().window(allHandles);
-           if(driver.getCurrentUrl().contains("secondPage.html")) {
-            driver.close();
-            driver.switchTo().window(windowHandle);
+            if(driver.getCurrentUrl().contains("secondPage.html")) {
+                driver.close();
+                driver.switchTo().window(windowHandle);
         }
         page.listOfPages.get(1).click();
         Thread.sleep(2000);
