@@ -1,9 +1,10 @@
 package pages;
 
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class FirstPage {
 
- //   @FindBy(selector = "") public WebElement nameOfWebElement;
+    @FindBy(id = "idModuleImage") public WebElement nameOfWebElement;
 
 }
