@@ -50,6 +50,13 @@ public class FirstTest{
         System.out.println(page.uncheckedCheckbox.getAttribute("name"));
     }
 
+    @Test
+    void testIframes() throws InterruptedException {
+        driver.get("file://"+new File("src/test/resources/htmls/withIframes.html").getAbsolutePath());
+        Thread.sleep(5000);
+        driver.switchTo().frame("frameWithId");
+    }
+
     @AfterAll
     void afterAll() {
         driver.quit();
