@@ -2,6 +2,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import pages.FirstPage;
 
 import java.io.File;
+import java.util.Set;
 
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -65,10 +67,21 @@ public class FirstTest{
         driver.switchTo().frame(page.iframe3);
         System.out.println(page.btnForFromId3.getText());
         driver.switchTo().defaultContent();
-
     }
 
-
+    @Test
+    void testCookies() throws InterruptedException {
+        driver.get("https://www.example.com");
+        driver.manage().addCookie(new Cookie("firstName","firstValue"));
+        Set<Cookie> cookieSet =  driver.manage().getCookies();
+        for(Cookie cookies: cookieSet){
+            System.out.println(cookies);
+            System.out.println("/////////////////////////////");
+        }
+        System.out.println(driver.manage().getCookieNamed("firstName").getValue());
+        driver.manage().deleteCookieNamed("firstName");
+        driver.manage().deleteAllCookies();
+    }
 
     @AfterAll
     void afterAll() {
