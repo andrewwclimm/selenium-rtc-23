@@ -14,8 +14,6 @@ public class BrowserGetter {
     }
 
     public WebDriver getFirefox() {
-//        FirefoxOptions firefoxOptions = new FirefoxOptions();
-//        firefoxOptions.addArguments("--remote-allow-origins=*");
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         return driver;
