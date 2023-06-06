@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class FirstPage {
 
     @FindBy(className="w3-btn") public WebElement elementWithClass;
@@ -28,5 +30,6 @@ public class FirstPage {
     @FindBy(css="[src=\"forFrameAsWebElement.html\"]") public WebElement iframe3;
 
     @FindBy(id="btnForFrameAsWebElement") public WebElement btnForFromId3;
+    @FindBy(css="a") public List<WebElement> listOfPages;
 
 }

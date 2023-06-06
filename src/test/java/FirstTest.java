@@ -2,10 +2,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import pages.FirstPage;
@@ -70,7 +67,7 @@ public class FirstTest{
     }
 
     @Test
-    void testCookies() throws InterruptedException {
+    void testCookies() {
         driver.get("https://www.example.com");
         driver.manage().addCookie(new Cookie("firstName","firstValue"));
         Set<Cookie> cookieSet =  driver.manage().getCookies();
@@ -81,6 +78,23 @@ public class FirstTest{
         System.out.println(driver.manage().getCookieNamed("firstName").getValue());
         driver.manage().deleteCookieNamed("firstName");
         driver.manage().deleteAllCookies();
+    }
+
+    @Test
+    void testSwitchContexts() throws InterruptedException {
+        driver.get("file://"+new File("src/test/resources/htmls/mainPage.html").getAbsolutePath());
+        Thread.sleep(1000);
+        String windowHandle = driver.getWindowHandle();
+        System.out.println("windowhandle = " + windowHandle);
+        page.listOfPages.get(0).click();
+       for (String allHandles :  driver.getWindowHandles())
+            driver.switchTo().window(allHandles);
+           if(driver.getCurrentUrl().contains("secondPage.html")) {
+            driver.close();
+            driver.switchTo().window(windowHandle);
+        }
+        page.listOfPages.get(1).click();
+        Thread.sleep(2000);
     }
 
     @AfterAll
