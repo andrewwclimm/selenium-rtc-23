@@ -10,4 +10,8 @@ public class FirstPage {
     @FindBy(tagName = "h2") public WebElement elementWithTagName;
     @FindBy(css = "[width='189']") public WebElement imageWithWidth;
     @FindBy(css = "[src*='1878']") public WebElement imageWithSrc;
+
+    @FindBy(css = "[type=\"checkbox\"]") public WebElement checkbox;
+    @FindBy(css = "[type=\"radio\"]") public WebElement radio;
+
 }
