@@ -35,7 +35,6 @@ public class FirstTest{
         page.radio.click();
     }
 
-
     @AfterAll
     void afterAll() {
         driver.quit();
