@@ -55,6 +55,8 @@ public class FirstTest{
         driver.get("file://"+new File("src/test/resources/htmls/withIframes.html").getAbsolutePath());
         Thread.sleep(5000);
         driver.switchTo().frame("frameWithId");
+        System.out.println(page.btnForFromId.getText());
+        driver.switchTo().defaultContent();
     }
 
     @AfterAll

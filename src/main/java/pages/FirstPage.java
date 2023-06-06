@@ -21,4 +21,6 @@ public class FirstPage {
 
     @FindBy(css="[name = \"checkedCheckbox\"]") public WebElement uncheckedCheckbox;
 
+    @FindBy(id="btnForFrameWithId") public WebElement btnForFromId;
+
 }
