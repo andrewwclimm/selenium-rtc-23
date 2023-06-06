@@ -11,4 +11,6 @@ public class FirstPage {
     @FindBy(className = "w3-btn") public WebElement elementWithClass;
     @FindBy(css = ".w3-btn.w3-padding.w3-border.w3-sand") public WebElement elementWithManyClasses;
     @FindBy(tagName = "h2") public WebElement elementWithTagName;
+    @FindBy(css = "[width='189']") public WebElement imageWithWidth;
+    @FindBy(css = "[src*='1878']") public WebElement imageWithSrc;
 }
