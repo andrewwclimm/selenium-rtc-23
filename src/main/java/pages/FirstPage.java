@@ -17,5 +17,8 @@ public class FirstPage {
     @FindBy(css="[name='coffee']") public WebElement coffee;
 
     @FindBy(css="h5") public WebElement h5Element;
+    @FindBy(id="idModuleImage") public WebElement getAttributeElement;
+
+    @FindBy(css="[name = \"checkedCheckbox\"]") public WebElement uncheckedCheckbox;
 
 }

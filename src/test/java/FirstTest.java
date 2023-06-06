@@ -45,6 +45,9 @@ public class FirstTest{
         for (WebElement webElement : coffeeDropdown.getOptions()){
             System.out.println(webElement.getText());
         }
+        System.out.println(page.uncheckedCheckbox.getAttribute("src"));
+        System.out.println(page.uncheckedCheckbox.getAttribute("id"));
+        System.out.println(page.uncheckedCheckbox.getAttribute("alt"));
     }
 
     @AfterAll
