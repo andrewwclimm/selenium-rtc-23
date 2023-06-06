@@ -39,6 +39,8 @@ public class FirstTest{
 
 //        Select coffeeDropdown = new Select(page.checkbox); -> dropdowns
 //        coffeeDropdown.deselectAll();
+//        coffeeDropdown.selectByIndex(2);
+//        coffeeDropdown.selectByValue("1");
     }
 
     @AfterAll
