@@ -2,8 +2,10 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import pages.FirstPage;
 
 import java.io.File;
@@ -33,6 +35,10 @@ public class FirstTest{
         Thread.sleep(5000);
         page.checkbox.click();
         page.radio.click();
+        page.checkbox.sendKeys(Keys.TAB);
+
+//        Select coffeeDropdown = new Select(page.checkbox); -> dropdowns
+//        coffeeDropdown.deselectAll();
     }
 
     @AfterAll
