@@ -23,4 +23,6 @@ public class FirstPage {
 
     @FindBy(id="btnForFrameWithId") public WebElement btnForFromId;
 
+    @FindBy(id="btnForFrameWithIndex") public WebElement btnForFromId2;
+
 }

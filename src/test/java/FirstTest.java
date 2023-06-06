@@ -57,6 +57,10 @@ public class FirstTest{
         driver.switchTo().frame("frameWithId");
         System.out.println(page.btnForFromId.getText());
         driver.switchTo().defaultContent();
+
+        driver.switchTo().frame(1);
+        System.out.println(page.btnForFromId2.getText());
+        driver.switchTo().defaultContent();
     }
 
     @AfterAll
