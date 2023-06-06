@@ -47,7 +47,7 @@ public class FirstTest{
         }
         System.out.println(page.uncheckedCheckbox.getAttribute("src"));
         System.out.println(page.uncheckedCheckbox.getAttribute("id"));
-        System.out.println(page.uncheckedCheckbox.getAttribute("alt"));
+        System.out.println(page.uncheckedCheckbox.getAttribute("name"));
     }
 
     @AfterAll
