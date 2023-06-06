@@ -61,7 +61,14 @@ public class FirstTest{
         driver.switchTo().frame(1);
         System.out.println(page.btnForFromId2.getText());
         driver.switchTo().defaultContent();
+
+        driver.switchTo().frame(page.iframe3);
+        System.out.println(page.btnForFromId3.getText());
+        driver.switchTo().defaultContent();
+
     }
+
+
 
     @AfterAll
     void afterAll() {

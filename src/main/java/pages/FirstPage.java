@@ -25,4 +25,8 @@ public class FirstPage {
 
     @FindBy(id="btnForFrameWithIndex") public WebElement btnForFromId2;
 
+    @FindBy(css="[src=\"forFrameAsWebElement.html\"]") public WebElement iframe3;
+
+    @FindBy(id="btnForFrameAsWebElement") public WebElement btnForFromId3;
+
 }
