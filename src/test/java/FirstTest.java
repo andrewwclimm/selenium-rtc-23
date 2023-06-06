@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import pages.FirstPage;
@@ -37,10 +38,13 @@ public class FirstTest{
         page.radio.click();
         page.checkbox.sendKeys(Keys.TAB);
 
-//        Select coffeeDropdown = new Select(page.checkbox); -> dropdowns
-//        coffeeDropdown.deselectAll();
-//        coffeeDropdown.selectByIndex(2);
-//        coffeeDropdown.selectByValue("1");
+        Select coffeeDropdown = new Select(page.coffee);
+        coffeeDropdown.deselectAll();
+        coffeeDropdown.selectByIndex(2);
+        coffeeDropdown.selectByValue("1");
+        for (WebElement webElement : coffeeDropdown.getOptions()){
+            System.out.println(webElement.getText());
+        }
     }
 
     @AfterAll

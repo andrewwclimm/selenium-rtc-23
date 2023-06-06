@@ -14,4 +14,6 @@ public class FirstPage {
     @FindBy(css = "[type=\"checkbox\"]") public WebElement checkbox;
     @FindBy(css = "[type=\"radio\"]") public WebElement radio;
 
+    @FindBy(css= "[name = 'coffee']") public WebElement coffee;
+
 }
